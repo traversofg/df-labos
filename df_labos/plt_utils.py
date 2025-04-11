@@ -1,6 +1,51 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+def set_plt_params(
+        figsize: tuple[int, int] = (11, 6),
+        fontsize: int = 14,
+        linewidth: float = 1.25,
+        style: str = 'default'
+) -> None:
+
+    # Estilo del gráfico
+    plt.style.use(style)
+
+    # Tamaño de la figura
+    plt.rcParams['figure.figsize'] = figsize
+
+    # Aumentar el tamaño de las etiquetas
+    plt.rcParams['font.size'] = fontsize
+
+    # Controlar la transparencia de las líneas y los gráficos
+    plt.rcParams['lines.linewidth'] = linewidth
+    plt.rcParams['lines.color'] = 'b'
+
+    # Cambiar el estilo de las cuadrículas
+    plt.rcParams['grid.color'] = 'gray'
+    plt.rcParams['grid.linestyle'] = '--'
+    plt.rcParams['grid.linewidth'] = 0.5
+    plt.rcParams['grid.alpha'] = 1
+
+    # Cambiar el estilo de los ejes
+    plt.rcParams['axes.labelsize'] = 20
+    plt.rcParams['axes.titlesize'] = 16
+    plt.rcParams['axes.grid'] = True
+
+    # Cambiar los colores de los ticks de los ejes
+    plt.rcParams['xtick.color'] = 'black'
+    plt.rcParams['ytick.color'] = 'black'
+
+    # Aumentar el tamaño de los ticks de los ejes
+    plt.rcParams['xtick.labelsize'] = 16
+    plt.rcParams['ytick.labelsize'] = 16
+
+    from cycler import cycler
+    navy = (56 / 256, 74 / 256, 143 / 256)
+    teal = (106 / 256, 197 / 256, 179 / 256)
+    pink = [199 / 255, 99 / 255, 150 / 255]
+    plt.rcParams['axes.prop_cycle'] = cycler(color=[teal, navy, pink])
+
 def subplot_1d(): ...
 
 def subplot_2d(
