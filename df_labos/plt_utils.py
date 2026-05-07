@@ -42,8 +42,10 @@ def set_plt_params(
 
     from cycler import cycler
     navy = (56 / 256, 74 / 256, 143 / 256)
-    teal = (106 / 256, 197 / 256, 179 / 256)
-    pink = [199 / 255, 99 / 255, 150 / 255]
+    #teal = (106 / 256, 197 / 256, 179 / 256)
+    #pink = [199 / 255, 99 / 255, 150 / 255]
+    teal = (0.464, 0.820, 0.751)
+    pink = (0.830, 0.388, 0.638)
     plt.rcParams['axes.prop_cycle'] = cycler(color=[teal, navy, pink])
 
 def subplot_1d(): ...

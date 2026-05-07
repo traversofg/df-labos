@@ -92,3 +92,15 @@ def tirar_linea(fname: str,
     plt.show()
 
     return intensidades
+
+def get_R_sq(f, xdata, ydata, params):
+  
+  xdata, ydata = np.array(xdata, ydata)
+  
+  residuals = ydata - f(xdata, *params)
+  ss_res = np.sum(residuals**2)
+  ss_tot = np.sum( (ydata - np.mean(ydata))**2 )
+
+  r_sq = 1 - ( ss_res / ss_tot )
+
+  return r_sq;
